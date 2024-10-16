@@ -19,7 +19,7 @@ and open the template in the editor.
             <div class="footer">
                 <div class="contact">
                          <h1>CADASTRAR USUÁRIOS</h1>
-               <form action="usuario_cadastro_salvar.php" method="po" >
+               <form action="usuario_cadastro_salvar.php" method="post" >
                 <ol>
                     <li>
                         <input name="txtLoginUsuario" type="text" class="textbox" placeholder="Login do usuário"/></li>
