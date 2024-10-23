@@ -16,6 +16,8 @@
     //3º PASSO: Montar o SELECT
     $sql = "SELECT * FROM usuario " ;
     $sql .="WHERE login_usuario = '$login_usuario' ";
+
+    
     //4º PASSO: Executar o comando no BDA
     $dados = retornarDados($sql);
 
@@ -25,6 +27,20 @@
     }
     else
     {
+        $linha = mysqli_fetch_assoc($dados);
+        $hash = $linha["senha_usuario"];
+
+        $retorno = password_verify($senha_usuario,$hash);
+
+        if ($retorno)
+        {
+            header("location:index_admin.php");
+        }
+        else
+        {
+            echo "<h1>Senha inválida</h1>";
+        }
+
         header ("location:index_admin.php");
     }
     ?>
